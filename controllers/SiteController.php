@@ -56,28 +56,5 @@ class SiteController extends Controller
         return $this->render('Test');
     }
 
-    public function actionInfo()
-    {
-        return $this->render('info');
-    }
-
-    public function actionLab1()
-    {
-        $model = new Lab1Form();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()){
-            return $this->render('lab1', ['model' => $model]);
-        } else {
-            return $this->render('lab1', ['model' => $model]);
-        }
-    }
-
-    public function actionLab2()
-    {
-        return $this->render('lab2');
-    }
-    public function actionLab3()
-    {
-        return $this->render('lab3');
-    }
 
 }

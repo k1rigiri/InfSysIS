@@ -44,10 +44,10 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => '@w
             ['label' => 'Тест', 'url' => ['/site/entry']],
             ['label' => 'Лабораторные',
                 'items' =>[
-                    ['label' => 'Информация', 'url' => ['/site/info']],
-                    ['label' => 'Лабораторная 1', 'url' => ['/site/lab1']],
-                    ['label' => 'Лабораторная 2', 'url' => ['/site/lab2']],
-                    ['label' => 'Лабораторная 3', 'url' => ['/site/lab3']],
+                    ['label' => 'Информация', 'url' => ['/lab/info']],
+                    ['label' => 'Лабораторная 1', 'url' => ['/lab/lab1']],
+                    ['label' => 'Лабораторная 2', 'url' => ['/lab/lab2']],
+                    ['label' => 'Лабораторная 3', 'url' => ['/lab/lab3']],
                 ]
             ]     
         ]
