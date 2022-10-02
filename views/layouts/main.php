@@ -41,7 +41,12 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => '@w
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Тест', 'url' => ['/site/entry']],
+            ['label' => 'Тест',
+                'items' =>[
+                    ['label' => 'Лаб 1', 'url' => ['/site/entry']],
+                    ['label' => 'Лаб 2', 'url' => ['/country/index']],
+                ],
+            ],
             ['label' => 'Лабораторные',
                 'items' =>[
                     ['label' => 'Информация', 'url' => ['/lab/info']],

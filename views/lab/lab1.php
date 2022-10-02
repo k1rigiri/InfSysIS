@@ -10,25 +10,6 @@ $this->title = 'Лаб.1';
 ?>
 <div class="container-md text-left">Лабораторная работа №1</div>
 
-<style>
-    .container-md
-    {
-        padding-top: 10px;
-        height: 50px;
-        background-color: #E6E6FA;
-    }
-    form label
-    {
-        margin-top: 10px;
-        font-weight:bold;
-        font-family: sans-serif;
-    }
-    .btn
-    {
-        margin-top: 10px;
-    }
-</style>
-
 <div class="lab1-content">
         <div class="row">
             <div class="col-lg-6">

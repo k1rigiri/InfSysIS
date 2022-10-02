@@ -82,3 +82,21 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.container-md
+    {
+        padding-top: 10px;
+        height: 50px;
+        background-color: #E6E6FA;
+    }
+    form label
+    {
+        margin-top: 10px;
+        font-weight:bold;
+        font-family: sans-serif;
+    }
+    .btn
+    {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }

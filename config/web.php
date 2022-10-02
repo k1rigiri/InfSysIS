@@ -2,6 +2,7 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$db1 = require __DIR__ . '/db1.php';
 
 $config = [
     'id' => 'basic',
@@ -42,6 +43,7 @@ $config = [
             ],
         ],
         'db' => $db,
+        'db1' => $db1
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
