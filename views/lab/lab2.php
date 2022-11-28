@@ -56,7 +56,7 @@ $this->title = 'Лаб.2';
             </div>
             
             <div class="col-lg-6">
-                <h1 class="display-6">Таблица жанры:</h1>
+                <h1 class="display-6">Таблица книги:</h1>
                 <table class="table table-striped">
                     <tbody>
                         <tr>

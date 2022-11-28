@@ -10,7 +10,9 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\EntryForm;
+use app\models\RegistrationForm;
 use app\models\Lab1Form;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -56,5 +58,75 @@ class SiteController extends Controller
         return $this->render('Test');
     }
 
+    public function actionLab3()
+    {
+        return $this->render('lab3');
+    }
+    
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::class,
+                'only' => ['logout'],
+                'rules' => [
+                    [
+                        'actions' => ['logout'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::class,
+                'actions' => [
+                    'logout' => ['post'],
+                ],
+            ],
+        ];
+    }
+    
+    public function actionLogin()
+    {
+        if (!Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
+        $model = new LoginForm();
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->goBack();
+        }
+
+        $model->password = '';
+        return $this->render('login', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionRegistration(){
+
+        $model = new RegistrationForm();
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+
+             $user = new User();
+             $user->username = $model->username;
+             $user->password = $model->password;
+             $user->auth_key = 'ae1EWmdao12hFD';
+             $user->save();
+             Yii::$app->session->setFlash('success', "Регистрация завершена");
+             return $this->render('lab3', ['model' => $model ]);
+             } else {
+             // либо страница отображается первый раз, либо есть ошибка в данных
+             return $this->render('registration', ['model' => $model]);
+              }
+    }
+
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+
+        return $this->goHome();
+    }
 
 }

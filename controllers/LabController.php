@@ -43,10 +43,6 @@ class LabController extends Controller
         }
     }
 
-    public function actionLab3()
-    {
-        return $this->render('lab3');
-    }
 
     Public function actionLab2()
     {
